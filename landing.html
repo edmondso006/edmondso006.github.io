@@ -1,0 +1,162 @@
+<doctype html>
+<html>
+    <head>
+        <title>Funny Weather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html, body {
+                margin: 0px;
+                width: 100%;
+            }
+
+            .panel {
+                background-color: #2C3E50;
+                box-shadow: 0px 5px 5px grey;
+            }
+
+            .device-container > img {
+                margin-top: 48px;
+                max-width: 100%;
+            }
+
+            .landing {
+                display: flex;
+            }
+
+            .landing > header {
+                color: white;
+            }
+
+            .funniest {
+                display: inline;
+                color: #2C3E50;
+                background-color: white;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .quote-author {
+                font-style: italic;
+                align-self: flex-end;
+                margin-right: 16px;
+                margin: 32px;
+            }
+
+          
+
+            #title {
+                margin-top: 0px;
+                margin-bottom: -50px;
+                color: rgb(255, 255, 255);
+            }
+
+            @media (max-width: 959px) {
+                .landing {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .landing > header {
+                    color: white;
+                    font-size: 32px;
+                }
+
+                .badges {
+                    visibility: hidden;
+                }
+
+                .device-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .device-container > img {
+                    margin-top: 48px;
+                    width: 75%;
+                }
+
+
+            }
+
+
+            @media (min-width: 960px) {    
+
+                .landing > header {
+                    padding-left: 48px;
+                    margin-bottom: 8px;
+                    font-size: 72px;
+                    flex: 2;
+                    flex-shrink: 0;  
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .device-container {
+                    flex: 1;
+                    flex-shrink: 1;
+                }
+                .device-container > img {
+                    height: 120%;
+                }
+
+                .badges {
+                    margin-top: 24px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .store-badge {
+                    margin-left: 24px;
+                }
+            }
+        </style>
+        <script type="text/javascript">
+            // TODO: CHANGE ME
+            const ANDROID = "android";
+            const IOS = "ios";
+            const LINK_PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.epsilonv.funnyweather&referrer=landing';
+            const LINK_APP_STORE = 'https://apps.apple.com/us/app/percentage-discount-calculator/id1334471622?ls=1'
+            
+            function redirectToStore() {
+                const os = determineMobileOs();
+                if (os === ANDROID) {
+                    window.location.replace(LINK_PLAY_STORE);
+                } else if(os === IOS) {
+                    window.location.replace(LINK_APP_STORE);
+                }
+            }
+
+            function determineMobileOs() {
+                if (navigator.userAgent.match(/Android/i)) {
+                    return ANDROID;
+                } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+                    return IOS;
+                }
+            }
+
+            redirectToStore();
+
+        </script>
+    </head>
+    <body>
+        <main>
+            <div class="panel">
+                <section class="landing">
+                    <header>
+                        <h2 id="title">FunnyWeather</h2>
+                        <h3>"the <span style="display: block;"><span class="funniest">funniest</span></span> weather app."</h3>
+                        <span class="quote-author">- everyone</span>
+                    </header>
+                    <div class="device-container"> 
+                        <img alt="Device screenshot" src="screenie.png">
+                    </div>
+                </section>
+            </div>
+            <section class="badges">
+                <img class="store-badge" alt="Download on the App Store" src="app-store-badge.png">
+                <!-- <img class="store-badge" alt="Get it on Google Play" src="play-store-badge.png"/> -->
+            </section>
+      </main>
+    </body>
+</html>
