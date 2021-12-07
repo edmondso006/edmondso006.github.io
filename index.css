@@ -4,7 +4,11 @@ body {
 }
 
 .hero {
-   background-color: #397DFF;
+   /* background-color: #397DFF; */
+   background-image: url("./assets/background.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
    color: white;
    display: flex;
    justify-content: space-evenly;
@@ -93,8 +97,6 @@ body {
    margin-right: 20em;
 }
 
-
-
 .features-right-container {
    display: flex;
    flex-direction: column;
@@ -156,4 +158,71 @@ body {
    display: flex;
    flex-direction: column;
    justify-content: center; 
+}
+
+.reviews {
+   background-image: url("./assets/background.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.reviews-heading-text {
+   color: white;
+   text-align: center;
+   font-weight: 700;
+   font-size: 2.75em;
+   text-align: center;
+   padding-top: 1em;
+}
+
+.reviews-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding-bottom: 3em;
+}
+
+.review-item {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: white;
+   padding-left: 1.5em;
+   padding-right: 1.5em;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   border-radius: 1.5em;
+   width: 15em;
+   height: 10em;
+   margin-right: 4em;
+}
+
+.review-stars {
+   width: auto;
+   height: 1.5em;
+}
+
+.review-text-author {
+   text-align: right;
+}
+
+.footer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 3em;
+   background-color: #CFD5E0;
+}
+
+.twitter-logo {
+   margin-bottom: 1em;
+}
+
+.footer-text {
+   margin: 0;
+   color: #696969;
 }
