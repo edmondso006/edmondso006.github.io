@@ -5,6 +5,10 @@
         <title>Funny Weather</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Todo: SEO meta tags -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
         <link rel="stylesheet" href="index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +26,9 @@
             function redirectToStore() {
                 const os = determineMobileOs();
                 if (os === ANDROID) {
-                    // window.location.replace(LINK_PLAY_STORE);
+                    window.location.replace(LINK_PLAY_STORE);
                 } else if (os === IOS) {
-                    // window.location.replace(LINK_APP_STORE);
+                    window.location.replace(LINK_APP_STORE);
                 }
             }
 
@@ -50,9 +54,23 @@
                 </div>
 
                 <div class="downloads-container">
-                    <img src="assets/app-store-badge.png" alt="iOS Appstore Download Image"
-                        id="ios-appstore-download" />
-                    <img src="assets/google-play-badge.png" alt="Google Play Download Image" id="googleplay-download" />
+                    <a href="https://apps.apple.com/us/app/funny-weather-rude-forecasts/id1499583238">
+                        <img 
+                            src="assets/app-store-badge.png" 
+                            alt="iOS App store Download Image"
+                            id="ios-appstore-download" 
+                        />
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.epsilonv.funnyweather&referrer=landing">
+                        <img 
+                            src="assets/google-play-badge.png" 
+                            alt="Google Play Download Image" 
+                            id="googleplay-download" 
+                            href=
+                        />
+                    </a>
+
                 </div>
             </div>
 
@@ -145,11 +163,14 @@
         </section>
 
         <footer class="footer">
-            <img 
-                src="assets/twitter.png" 
-                alt="Twitter Logo" 
-                class="twitter-logo"
-            />
+            <a href="https://twitter.com/FunnyWeatherIO">
+                <img 
+                    src="assets/twitter.png" 
+                    alt="Twitter Logo" 
+                    class="twitter-logo"
+                />
+            </a>
+
             <p class="footer-text">© 2021 Eplison Ventures LLC</p>
             <p class="footer-text">eplisonventures@tests.com</p>
         </footer>
