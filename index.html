@@ -1,162 +1,106 @@
 <doctype html>
-<html>
+    <html>
+
     <head>
         <title>Funny Weather</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            html, body {
-                margin: 0px;
-                width: 100%;
-            }
-
-            .panel {
-                background-color: #2C3E50;
-                box-shadow: 0px 5px 5px grey;
-            }
-
-            .device-container > img {
-                margin-top: 48px;
-                max-width: 100%;
-            }
-
-            .landing {
-                display: flex;
-            }
-
-            .landing > header {
-                color: white;
-            }
-
-            .funniest {
-                display: inline;
-                color: #2C3E50;
-                background-color: white;
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
-            .quote-author {
-                font-style: italic;
-                align-self: flex-end;
-                margin-right: 16px;
-                margin: 32px;
-            }
-
-          
-
-            #title {
-                margin-top: 0px;
-                margin-bottom: -50px;
-                color: rgb(255, 255, 255);
-            }
-
-            @media (max-width: 959px) {
-                .landing {
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .landing > header {
-                    color: white;
-                    font-size: 32px;
-                }
-
-                .badges {
-                    visibility: hidden;
-                }
-
-                .device-container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .device-container > img {
-                    margin-top: 48px;
-                    width: 75%;
-                }
-
-
-            }
-
-
-            @media (min-width: 960px) {    
-
-                .landing > header {
-                    padding-left: 48px;
-                    margin-bottom: 8px;
-                    font-size: 72px;
-                    flex: 2;
-                    flex-shrink: 0;  
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .device-container {
-                    flex: 1;
-                    flex-shrink: 1;
-                }
-                .device-container > img {
-                    height: 120%;
-                }
-
-                .badges {
-                    margin-top: 24px;
-                    display: flex;
-                    align-items: center;
-                }
-
-                .store-badge {
-                    margin-left: 24px;
-                }
-            }
-        </style>
+        <!-- Todo: SEO meta tags -->
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet">
         <script type="text/javascript">
             // TODO: CHANGE ME
             const ANDROID = "android";
             const IOS = "ios";
-            const LINK_PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.epsilonv.funnyweather&referrer=landing';
+            const LINK_PLAY_STORE =
+                'https://play.google.com/store/apps/details?id=com.epsilonv.funnyweather&referrer=landing';
             const LINK_APP_STORE = 'https://apps.apple.com/us/app/funny-weather-rude-forecasts/id1499583238'
-            
+
             function redirectToStore() {
                 const os = determineMobileOs();
                 if (os === ANDROID) {
-                    window.location.replace(LINK_PLAY_STORE);
-                } else if(os === IOS) {
-                    window.location.replace(LINK_APP_STORE);
+                    // window.location.replace(LINK_PLAY_STORE);
+                } else if (os === IOS) {
+                    // window.location.replace(LINK_APP_STORE);
                 }
             }
 
             function determineMobileOs() {
                 if (navigator.userAgent.match(/Android/i)) {
                     return ANDROID;
-                } else if(navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+                } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
                     return IOS;
                 }
             }
 
             redirectToStore();
-
         </script>
     </head>
+
     <body>
-        <main>
-            <div class="panel">
-                <section class="landing">
-                    <header>
-                        <h2 id="title">FunnyWeather</h2>
-                        <h3>"the <span style="display: block;"><span class="funniest">funniest</span></span> weather app."</h3>
-                        <span class="quote-author">- everyone</span>
-                    </header>
-                    <div class="device-container"> 
-                        <img alt="Device screenshot" src="screenie.png">
-                    </div>
-                </section>
+        <section class="hero">
+            <div class="hero-left-container">
+                <div class="hero-text">
+                    <h1 id="hero-title">Funny Weather</h1>
+                    <p id="hero-quote">"The Funniest Weather App"</p>
+                    <p id="hero-author">- Everyone</p>
+                </div>
+
+                <div class="downloads-container">
+                    <img src="assets/app-store-badge.png" alt="iOS Appstore Download Image"
+                        id="ios-appstore-download" />
+                    <img src="assets/google-play-badge.png" alt="Google Play Download Image" id="googleplay-download" />
+                </div>
             </div>
-            <section class="badges">
-                <img class="store-badge" alt="Download on the App Store" src="app-store-badge.png">
-                <!-- <img class="store-badge" alt="Get it on Google Play" src="play-store-badge.png"/> -->
-            </section>
-      </main>
+
+            <div class="hero-right-container">
+                <img src="assets/hero-image.png" alt="Funny Weather Hero Image" class="hero-image" />
+            </div>
+        </section>
+
+        <section class="features-container">
+            <h2 class="features-heading-text">Features</h2>
+
+            <div class="grid-container">
+                
+                <div class="top-left">
+                    <img src="assets/widget-submit.png" alt="Widget and Submit Screenshot"
+                        class="features-left-image" />
+                </div>
+
+                <div class="top-right">
+                    <h3 class="features-subtitle">1,600 Hilarious weather jokes</h3>
+                    <p class="features-text">Hilarious and rude weather jokes that are sure to brighten your day up.</p>
+
+                    <h3 class="features-subtitle">Submit your own weather jokes</h3>
+                    <p class="features-text">Think that you are funny? Submit your best weather jokes and once approved
+                     will show on the app for all users!</p>
+                </div>
+
+                <div class="bottom-left">
+                    <h3 class="features-subtitle">Accurate Weather Data</h3>
+                    <p class="features-text">Accurate weather data that is provided by Apple’s newly purchased company
+                        DarkSky.</p>
+
+                    <h3 class="features-subtitle">Beautifully designed widgets</h3>
+                    <p class="features-text">Native widgets supported on both iOS and Android.</p>
+                </div>
+                
+                <div class="bottom-right">
+                    <img 
+                        src="assets/tilted-main-screen-group.png" 
+                        alt="Two Screen Shots"
+                        class="features-right-image" />
+                </div>
+            </div>
+
+        </section>
+        <main>
+
+        </main>
     </body>
-</html>
+
+    </html>
